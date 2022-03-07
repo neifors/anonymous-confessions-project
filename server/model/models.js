@@ -1,33 +1,20 @@
-const { createPromptModule } = require("inquirer");
-const confessionsData = require("../data/data.json")
+const confessionsData = require("../data/sample")
 
-class Comment {
-   constructor(data) {
-      this.id = data.id;
-      this.message = data.message;
-      this.reactions = {
-         like : 0,
-         love : 0,
-         dislike : 0,
-      };
-      this.gif = "";
-   }
-}
-
-class Confession extends Comment{
+class Confession{
    constructor(data){
-      super(id);
+      this.id = data.id;
       this.title = data.title;
-      super(message);
+      this.message = data.message;
       this.category = data.category;
-      this.comments = [];
-      super(reactions);
-      super(gif);
+      this.comments = this. comments;
+      this.reactions = this.reactions;
+      this.gif = this.gif;
    }
 
    static get all() {
       // returns all the posts saved into ./data/data.json
-      return confessionsData;
+      const confessions = confessionsData.map(confession => new Confession(confession));
+      return confessions;
    }
 
    static getConfessionById(id) {
@@ -55,7 +42,6 @@ class Confession extends Comment{
       const confessions = Confession.all;
       for (confession of confessions) {
          confession["title"]
-         confession["message"]
       };
    }
 
@@ -70,7 +56,7 @@ class Confession extends Comment{
       // create a comment into a confession with the received id
       const confession = Confession.getById(id);
       const commentId = confession.length + 1;
-      confession["comments"].push(new Comment({id : commentId, ...data}));
+      // confession["comments"].push(new Comment({id : commentId, ...data}));
    }
 
    static addReaction(reaction, confessionId, commmentId=null) {
