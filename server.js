@@ -9,7 +9,8 @@ app.use(express.json())
 app.use('/confessions', router)
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '/homepage/index.html'))
+    res.send('hello world')
+    //res.sendFile(path.join(__dirname, '/homepage/index.html'))
 })
 
 app.get('/style.css', (req, res) => {
