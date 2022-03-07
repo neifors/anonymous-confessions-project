@@ -1,19 +1,20 @@
-const confessionsData = require("../data/sample")
+const confessionsData = require("../sample")
 
 class Confession{
    constructor(data){
-      this.id = data.id;
-      this.title = data.title;
-      this.message = data.message;
-      this.category = data.category;
-      this.comments = this. comments;
-      this.reactions = this.reactions;
-      this.gif = this.gif;
+      this.id = data.id
+      this.title = data.title
+      this.message = data.message
+      this.category = data.category
+      this.comments = data. comments
+      this.reactions = data.reactions
+      this.gif = data.gif
    }
 
    static get all() {
       // returns all the posts saved into ./data/data.json
       const confessions = confessionsData.map(confession => new Confession(confession));
+      console.log(confessions)
       return confessions;
    }
 

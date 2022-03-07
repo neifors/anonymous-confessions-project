@@ -25,7 +25,7 @@ const data = [
       reactions : {
          like : 32, love : 0, hate : 0
       },
-      gift : ""
+      gif : ""
    },
    {
       id : 2,
@@ -36,7 +36,7 @@ const data = [
       reactions : {
          like : 4, love : 0, hate : 2
       },
-      gift : ""
+      gif : ""
    },
    {
       id : 3,
@@ -72,7 +72,7 @@ const data = [
       reactions : {
          like : 57, love : 36, hate : 0
       },
-      gift : "https://media0.giphy.com/media/xT5LMSu0jZt535Lxu0/giphy.gif?cid=ecf05e473of54kvdxabpvphh0wlanld2puo9ogv3qsgzala4&rid=giphy.gif&ct=g"
+      gif : "https://media0.giphy.com/media/xT5LMSu0jZt535Lxu0/giphy.gif?cid=ecf05e473of54kvdxabpvphh0wlanld2puo9ogv3qsgzala4&rid=giphy.gif&ct=g"
    }
 ]
 

@@ -1,11 +1,12 @@
 const express = require('express')
 const router = express.Router()
 
-const Confession = require('../model/models.js')
+const Confession = require('../model/models')
 
 // http://localhost:3000/confessions/
 router.get('/', (req, res) => {
-    return Confession.all
+    const confessionsData = Confession.all;
+    res.send(confessionsData);
   })
   
 
