@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
-
 const Confessions = require('../model/models.js')
+const funcs = require('../model/models.js')
 
 // http://localhost:3000/confessions/
 router.get('/', (req, res) => {
@@ -14,7 +14,12 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     // const allData = Confessions.all
     // return allData.find(confession => confession.id === req.params.id)
-    return getConfessionsbyId(req.params.id)
+    try {
+        return getConfessionsbyId(req.params.id)
+    }
+    catch (err) {
+        res.status(404)
+    }
   })
 
 

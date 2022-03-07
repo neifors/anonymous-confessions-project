@@ -1,28 +1,15 @@
 // const confessionsData = require("../data/data.json")
 const confessionsData = require('../data/sampleData.json')
 
-class Comment {
-   constructor(data) {
-      this.id = data.id;
-      this.message = data.message;
-      this.reactions = {
-         like : 0,
-         love : 0,
-         dislike : 0,
-      };
-      this.gif = "";
-   }
-}
-
-class Confession extends Comment{
+class Confession {
    constructor(data){
-      super(id);
+      this.id = data.id;
       this.title = data.title;
-      super(message);
+      this.message = data.message;
       this.category = data.category;
-      this.comments = [];
-      super(reactions);
-      super(gif);
+      this.comments = data.comments;
+      this.reactions = data.reactions;
+      this.gif = data.gif;
    }
 
    static get all() {
@@ -70,7 +57,7 @@ class Confession extends Comment{
       // create a comment into a confession with the received id
       const confession = Confession.getById(id);
       const commentId = confession.length + 1;
-      confession["comments"].push(new Comment({id : commentId, ...data}));
+      //confession["comments"].push(new Comment({id : commentId, ...data}));
    }
 
    static addReaction(reaction, confessionId, commmentId=null) {
