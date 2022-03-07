@@ -140,7 +140,7 @@ h1:after{
 }
 
 
-.confessionPost{
+#confessionPost{
     width: 75%;
     height: 85%;
     border-radius: 10px;
@@ -154,7 +154,7 @@ h1:after{
 
 }
 
-.col-6{
+#COL-6{
     margin-left: -10%;
     margin-bottom: -4%;
 }
@@ -176,17 +176,16 @@ h1:after{
 
     }
 
-    .confessionPost{
+    #confessionPost{
         width: 73%;
         height: 70%;
 
 
     }
 
-    .col-6{
+    #COL-6{
         margin-left: -10%;
         margin-bottom: -4%;
     }
-
 
 }
