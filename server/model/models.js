@@ -40,15 +40,20 @@ class Confession{
    static findConfession(keyword) {
       // find confessions that contains the keyword into title
       const confessions = Confession.all;
-      for (confession of confessions) {
-         confession["title"]
-      };
+      return confessions.filter( confession => {
+         for (let word of confession["title"].split(" ")) {
+            if (word === keyword) {
+               return confession
+            }
+         }
+      })
+
    }
 
    static findByCategory(category) {
       // find all confessions of a given category
       const confessions = Confession.all;
-      return confessions.filter( confession => confession["category"] === category);;
+      return confessions.filter( confession => confession["category"] === category);
    }
 
    static createComment(id,data) {

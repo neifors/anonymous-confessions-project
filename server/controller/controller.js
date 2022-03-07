@@ -22,8 +22,8 @@ router.get('/category/:category', (req, res) => {
 
 
 // http://localhost:3000/confessions/search/:keyword
-router.get('/serch/:keyword', (req, res) => {
-    return Confession.findConfession(req.params.keyword)
+router.get('/search/:keyword', (req, res) => {
+    res.send(Confession.findConfession(req.params.keyword))
 })
 
 module.exports = router;
