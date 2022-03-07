@@ -48,8 +48,7 @@ class Confession{
    static findByCategory(category) {
       // find all confessions of a given category
       const confessions = Confession.all;
-      categoryConfessions = confessions.filter( confession => confession["category"] === category);
-      return categoryConfesions;
+      return confessions.filter( confession => confession["category"] === category);;
    }
 
    static createComment(id,data) {

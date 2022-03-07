@@ -17,7 +17,7 @@ router.get('/:id', (req, res) => {
 
 // http://localhost:3000/confessions/category/:category
 router.get('/category/:category', (req, res) => {
-    return Confession.findByCategory(req.params.category)
+    res.send( Confession.findByCategory(req.params.category))
 })
 
 
