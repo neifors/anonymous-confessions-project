@@ -134,19 +134,22 @@ h1:after{
 }
 
 .screenContainer{
-    height: 1250%;
-    transform: translate3d(9.25%, -27.5%, 0);
+    position: absolute;
+    height: auto;
+    transform: translate3d(9.25%, 19vh, 0);
         
 }
 
 
 #confessionPost{
     width: 75%;
-    height: 85%;
+    height: 36.5vh;
     border-radius: 10px;
     grid-area: confessionPost;
     background-color: #666666;  
     margin: 3%;
+    margin-bottom: 10%;
+    margin-top: 10.25%;
     padding: 2%;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     
@@ -156,7 +159,7 @@ h1:after{
 
 #COL-6{
     margin-left: -10%;
-    margin-bottom: -4%;
+    margin-bottom: -3%;
 }
 
 
@@ -171,14 +174,15 @@ h1:after{
 
 
     .screenContainer{
-        height: 1100%;
-        transform: translate3d(9.25%, -27%, 0);
+        height: auto;
+        transform: translate3d(9.25%, 23.25vh, 0);
 
     }
 
     #confessionPost{
         width: 73%;
-        height: 70%;
+        height: 37vh;
+        margin-top: 5%;
 
 
     }
