@@ -5,27 +5,24 @@ const Confession = require('../model/models')
 
 // http://localhost:3000/confessions/
 router.get('/', (req, res) => {
-    const confessionsData = Confession.all;
-    res.send(confessionsData);
+    res.send(Confession.all);
   })
   
 
 // http://localhost:3000/confessions/:id
 router.get('/:id', (req, res) => {
-    // const allData = Confessions.all
-    // return allData.find(confession => confession.id === req.params.id)
-    return Confession.getConfessionsbyId(req.params.id)
+    res.send( Confession.getConfessionById(req.params.id))
 })
 
 
-// http://localhost:3000/confessions/:category
-router.get('/:category', (req, res) => {
+// http://localhost:3000/confessions/category/:category
+router.get('/category/:category', (req, res) => {
     return Confession.findByCategory(req.params.category)
 })
 
 
-// http://localhost:3000/confessions/:keyword
-router.get('/:keyword', (req, res) => {
+// http://localhost:3000/confessions/search/:keyword
+router.get('/serch/:keyword', (req, res) => {
     return Confession.findConfession(req.params.keyword)
 })
 

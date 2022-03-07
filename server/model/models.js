@@ -14,14 +14,13 @@ class Confession{
    static get all() {
       // returns all the posts saved into ./data/data.json
       const confessions = confessionsData.map(confession => new Confession(confession));
-      console.log(confessions)
       return confessions;
    }
 
    static getConfessionById(id) {
       // returns the post which matched the id
       const confessions = Confession.all;
-      const result = confessions.find(confession => confession["id"] === id);
+      const result = confessions.find(confession => confession["id"] == id);
       return result;
    }
 
