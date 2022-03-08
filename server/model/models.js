@@ -23,7 +23,7 @@ class Confession{
       // returns the post which matched the id
       const confessions = Confession.all;
       const result = confessions.find(confession => confession["id"] == id);
-      return result;
+      return result, confessions;
    }
 
    static getCommentById(confession, id) {
@@ -69,7 +69,6 @@ class Confession{
          "gif": data.gif, 
          "reactions" : { "like":  0, "love": 0, "hate": 0} 
       });
-      console.log(confession)
    }
 
    static addReaction(data) {
@@ -80,11 +79,11 @@ class Confession{
       if (data.idComment === 0) {
          confession["reactions"][data.reaction] ++;
          console.log(data.reaction+" +1 for comment with id: "+data.confessionId)
-         console.log(confession)
       } else {
          const comment = Confession.getCommentById(confession, data.idComment)
          comment["reactions"][data.reaction] ++
       }
+
    }
 
    static saveData(data) {

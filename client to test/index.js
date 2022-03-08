@@ -1,20 +1,16 @@
 document.getElementById("form").addEventListener("submit", event => {
    event.preventDefault()
 
-   let title = document.getElementById("title").value
-   let message = document.getElementById("message").value
-   let category = document.getElementById("category").value
-   let gif = document.getElementById("gif").value
 
    fetch("http://localhost:3000/confessions/post", {
       method : 'POST',
       body: JSON.stringify({
-         title : title,
-         message : message,
-         category : category,
-         comments : [],
-         reactions : { "like":  0, "love": 0, "hate": 0},
-         gif : gif
+         title : document.getElementById("title").value,
+         message : document.getElementById("message").value,
+         category : document.getElementById("category").value,
+         comments : [], // default value. As new confession still has no comments
+         reactions : { "like":  0, "love": 0, "hate": 0}, // default value. As new confession still has no reactions
+         gif : document.getElementById("gif").value
       }),
       headers : {
          "Content-Type": "application/json; charset=UTF-8"
