@@ -23,7 +23,7 @@ class Confession{
       // returns the post which matched the id
       const confessions = Confession.all;
       const result = confessions.find(confession => confession["id"] == id);
-      return result, confessions;
+      return result;
    }
 
    static getCommentById(confession, id) {
@@ -61,28 +61,42 @@ class Confession{
 
    static createComment(data) {
       // create a comment into a confession with the received id
-      const confession = Confession.getConfessionById(data.id);
-      const commentId = confession["comments"].length + 1;
-      confession["comments"].push({
-         "id" : commentId, 
-         "message": data.comment, 
-         "gif": data.gif, 
-         "reactions" : { "like":  0, "love": 0, "hate": 0} 
-      });
+      const confessions = Confession.all
+      const modified = confessions.map( confession => {
+         if (confession['id'] == data.id) {
+            const commentId = confession["comments"].length + 1;
+            confession["comments"].push({
+               "id" : commentId, 
+               "message": data.comment, 
+               "gif": data.gif, 
+               "reactions" : { "like":  0, "love": 0, "hate": 0} 
+            });
+         }
+         return confession
+      })
+      Confession.saveData(modified)
    }
 
    static addReaction(data) {
       // increment the reaction counter of a confession
       // if receiving the id of a confession but also an id of a comment,
       // increment the reaction of that comment.
-      const confession = Confession.getConfessionById(data.idConfession);
-      if (data.idComment === 0) {
-         confession["reactions"][data.reaction] ++;
-         console.log(data.reaction+" +1 for comment with id: "+data.confessionId)
-      } else {
-         const comment = Confession.getCommentById(confession, data.idComment)
-         comment["reactions"][data.reaction] ++
-      }
+      const confessions = Confession.all
+      const modified = confessions.map( confession => {
+         if (confession['id'] == data.idConfession) {
+
+            if (data.idComment === 0) {
+               confession["reactions"][data.reaction] ++;
+               console.log(data.reaction+" +1 for comment with id: "+data.idConfession)
+            } else {
+               const comment = Confession.getCommentById(confession, data.idComment)
+               comment["reactions"][data.reaction] ++
+            }
+
+         }
+         return confession
+      })
+      Confession.saveData(modified)
 
    }
 

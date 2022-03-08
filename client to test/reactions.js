@@ -66,12 +66,12 @@ document.getElementById("hate").addEventListener("click", e => {
 document.getElementById('form').addEventListener('submit', e => {
       e.preventDefault()
 
-      fetch("http://localhost:3000/confessions/postcomment", {
+      fetch("http://localhost:3000/confessions/postComment", {
          method : 'POST',
          body: JSON.stringify({
-            id : 2, // id of the comment where we want to add the comment
+            id : 5, // id of the confession where we want to add the comment
             comment : document.getElementById("comment").value, // comment text
-            gif : "" // if has not gif, send an empty string
+            gif : document.getElementById("gif").value === undefined ? "" : document.getElementById("gif").value // if has not gif, send an empty string
          }),
          headers : {
             "Content-Type": "application/json; charset=UTF-8"

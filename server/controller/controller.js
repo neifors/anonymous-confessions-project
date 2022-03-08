@@ -31,11 +31,13 @@ router.post('/post', (req, res) => {
     Confession.addConfession(req.body) 
 })
 
+// /confessions/reaction
 router.post('/reaction', (req, res) => {
     Confession.addReaction(req.body)
 })
 
-router.post('/postcomment', (req, res) => {
+// confessions/postComment
+router.post('/postComment', (req, res) => {
     Confession.createComment(req.body)
 })
 

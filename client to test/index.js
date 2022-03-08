@@ -10,7 +10,7 @@ document.getElementById("form").addEventListener("submit", event => {
          category : document.getElementById("category").value,
          comments : [], // default value. As new confession still has no comments
          reactions : { "like":  0, "love": 0, "hate": 0}, // default value. As new confession still has no reactions
-         gif : document.getElementById("gif").value
+         gif : document.getElementById("gif").value === undefined ? "" : document.getElementById("gif").value
       }),
       headers : {
          "Content-Type": "application/json; charset=UTF-8"
