@@ -1,4 +1,4 @@
-const confessionsData = require("../sample")
+const confessionsData = require("../data/sampleData.json")
 
 class Confession{
    constructor(data){
@@ -7,8 +7,8 @@ class Confession{
       this.message = data.message
       this.category = data.category
       this.comments = data. comments
-      this.reactions = data.reactions
       this.gif = data.gif
+      this.reactions = data.reactions
    }
 
    static get all() {
@@ -32,9 +32,11 @@ class Confession{
 
    static addConfession(data) {
       // save a new post into our data.json 
+      const confessions = Confession.all;
       const id = confessionsData.length + 1;
       const newConfession = new Confession({id : id, ...data});
-      confessionsData.push(newConfession);
+      confessions.push(newConfession);
+      console.log(confessions)
    }
 
    static findConfession(keyword) {
@@ -47,20 +49,25 @@ class Confession{
             }
          }
       })
-
    }
 
    static findByCategory(category) {
       // find all confessions of a given category
       const confessions = Confession.all;
+      console.log(confessions)
       return confessions.filter( confession => confession["category"] === category);
    }
 
    static createComment(id,data) {
       // create a comment into a confession with the received id
       const confession = Confession.getById(id);
-      const commentId = confession.length + 1;
-      // confession["comments"].push(new Comment({id : commentId, ...data}));
+      const commentId = confession["comments"].length + 1;
+      confession["comments"].push({
+         "id" : commentId, 
+         "message": data.message, 
+         "gif": data.gif, 
+         "reactions" : { "like":  0, "love": 0, "hate": 0} 
+      });
    }
 
    static addReaction(reaction, confessionId, commmentId=null) {
@@ -72,7 +79,7 @@ class Confession{
          confession["reactions"][reaction] ++;
       } else {
          const comment = Confession.getCommentById(confession, commmentId)
-         comment[reaction] ++
+         comment["reactions"][reaction] ++
       }
    }
 }

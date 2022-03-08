@@ -3,7 +3,7 @@
       "id" : 1,
       "title" : "Cheating",
       "message" : "I didn't study and I had to copy 😥",
-      "cateogry" : "guilt",
+      "category" : "guilt",
       "comments" : [
          {
             "id" : 1,
@@ -25,24 +25,24 @@
       "reactions" : {
          "like" : 32, "love" : 0, "hate" : 0
       },
-      "gift" : ""
+      "gif" : ""
    },
    {
       "id" : 2,
       "title" : "I lied",
       "message" : "I lied 3 times this week and now I'm ashamed to tell the truth",
-      "cateogry" : "lies",
+      "category" : "lies",
       "comments" : [],
       "reactions" : {
          "like" : 4, "love" : 0, "hate" : 2
       },
-      "gift" : ""
+      "gif" : ""
    },
    {
       "id" : 3,
       "title" : "A dream",
       "message" : "I had an indiscreet dream with my friend's girlfriend, should I tell him?",
-      "cateogry" : "dreams",
+      "category" : "dreams",
       "comments" : [
          {
             "id" : 1,
@@ -72,6 +72,6 @@
       "reactions" : {
          "like" : 57, "love" : 36, "hate" : 0
       },
-      "gift" : "https://media0.giphy.com/media/xT5LMSu0jZt535Lxu0/giphy.gif?cid=ecf05e473of54kvdxabpvphh0wlanld2puo9ogv3qsgzala4&rid=giphy.gif&ct=g"
+      "gif" : "https://media0.giphy.com/media/xT5LMSu0jZt535Lxu0/giphy.gif?cid=ecf05e473of54kvdxabpvphh0wlanld2puo9ogv3qsgzala4&rid=giphy.gif&ct=g"
    }
 ]
