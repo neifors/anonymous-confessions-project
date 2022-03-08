@@ -1,7 +1,6 @@
 {
   "name": "server",
   "version": "1.0.0",
-
   "description": "API for confessions website",
   "main": "index.js",
   "directories": {
@@ -15,7 +14,7 @@
     "API",
     "confessions"
   ],
-  "author": "Anh Nguyen, Arvin Jhurry, Harry Moore, Isabel Repetto",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/neifors/anonymous-confessions-project/issues"
@@ -31,8 +30,6 @@
   "scripts": {
     "test": "jest",
     "coverage": "jest --coverage",
-    "start": "node server.js"
-  },
-  "author": "",
-  "license": "ISC"
+    "start": "node index.js"
+  }
 }
