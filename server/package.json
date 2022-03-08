@@ -19,6 +19,7 @@
   "bugs": {
     "url": "https://github.com/neifors/anonymous-confessions-project/issues"
   },
+  
   "homepage": "https://github.com/neifors/anonymous-confessions-project#readme",
   "dependencies": {
     "nodemon": "^2.0.15",
