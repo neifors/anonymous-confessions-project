@@ -52,4 +52,13 @@ describe("Confession model", () => {
       expect(confessions.length).toBe(1)
       expect(confessions[0].category).toBe("thoughs")
    })
+
+   it('should return a comment by a given id', () => {
+      const confession = Confession.getConfessionById(3)
+      const comment = Confession.getCommentById(confession, 2)
+      expect(comment.gif).toBe("https://media4.giphy.com/media/69vaVA7p2i94y5Fqo1/giphy.gif?cid=ecf05e47bgexzqbtv8848c9aww7u00gjie800cf3aucvualz&rid=giphy.gif&ct=g")
+      expect(comment["reactions"]["love"]).toBe(43)
+   })
+
+   
 })
