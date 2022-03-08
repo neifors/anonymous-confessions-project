@@ -1,22 +1,72 @@
 
 let confessionContainer = document.querySelector(".row")
+let Cat = document.querySelector('#searchCatagory');
+let button = document.querySelector('#searchConfession');
+let search = document.querySelector('#searchBar');
+let confessPost = document.querySelector('#confessionPost');
+
+let AllCats = document.querySelectorAll('h4');
+let category = document.querySelector('h4');
 
 
-fetch('http://localhost:3000/confessions').then(function(response) {
-  response.json().then(function(json){
-    for(item in json){
-        let newConfession = document.createElement('div');
-        let ConfessionPost = document.createElement('div');
-        newConfession.classList.add('col-6');
-        newConfession.id = 'COL-6';
-        ConfessionPost.id = 'confessionPost';
-        let text = document.createTextNode(json[item].title);
-        ConfessionPost.append(text);
-        newConfession.append(ConfessionPost);
-        confessionContainer.append(newConfession); 
-    }
-  })
-})
+
+
+
+
+// fetch('http://localhost:3000/confessions').then(function(response) {
+//   response.json().then(function(json){
+//     for(item in json){
+//         let newConfession = document.createElement('div');
+//         let ConfessionPost = document.createElement('div');
+//         newConfession.classList.add('col-6');
+//         newConfession.id = 'COL-6';
+//         ConfessionPost.id = 'confessionPost';
+//         let text = document.createTextNode(json[item].title);
+//         ConfessionPost.append(text);
+//         newConfession.append(ConfessionPost);
+//         confessionContainer.append(newConfession); 
+//     }
+//   })
+// })
+
+
+button.addEventListener('click', searchBy);
+
+
+button.disabled = true;
+
+for(let i = 0; i < AllCats.length; i++){
+  alert(AllCats[i].textContent)
+  if(AllCats[i].textContent === 'catagory boom'){
+    AllCats[i].parentElement.parentElement.remove();
+  }
+}
+
+
+
+
+
+
+// for(object in confessionContainer.childNodes){
+//   for(item in confessPost.childnodes){
+//     console.log(category[item].value);
+
+//   }
+
+// }
+
+function searchBy(){
+  if(Cat.value === "Category" && search.value === ""){
+    alert("ERROR");
+  }
+  else{
+      confessionContainer.children(confessPost).each(function () {
+        alert(this.value)
+      })
+    
+
+  }
+}
 
 
 
