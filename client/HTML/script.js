@@ -13,8 +13,7 @@ fetch('http://localhost:3000/confessions').then(function(response) {
         let text = document.createTextNode(json[item].title);
         ConfessionPost.append(text);
         newConfession.append(ConfessionPost);
-        confessionContainer.append(newConfession);
-
+        confessionContainer.append(newConfession); 
     }
   })
 })
