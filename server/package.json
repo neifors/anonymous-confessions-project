@@ -7,11 +7,6 @@
   "directories": {
     "test": "test"
   },
-  "scripts": {
-    "test": "jest --watchAll",
-    "start": "node server.js",
-    "dev": "nodemon index.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/neifors/anonymous-confessions-project.git"
@@ -25,10 +20,8 @@
   "bugs": {
     "url": "https://github.com/neifors/anonymous-confessions-project/issues"
   },
+  
   "homepage": "https://github.com/neifors/anonymous-confessions-project#readme",
-
-
-
   "dependencies": {
     "nodemon": "^2.0.15",
     "supertest": "^6.2.2",
