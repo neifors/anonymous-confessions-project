@@ -12,8 +12,15 @@ function searchByCategoryOrTitle() {
   if (selectCategory.value === 'Category' && searchTerm.value === '') {
     alert('No search input or category found')
   } else {
-    removeAll();
-    fetchCon('/category/' + selectCategory.value);
+    if(selectCategory.value !== 'Category' && searchTerm.value === ''){
+      removeAll();
+      fetchCon('/category/' + selectCategory.value);
+    }
+    else if(selectCategory.value === 'Category' && searchTerm.value !== ''){
+      removeAll();
+      fetchCon('/search/' + searchTerm.value);
+
+    }
 
 
     // if (searchTerm.value !== '' && selectCategory.value === 'Category') {
