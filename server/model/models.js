@@ -1,4 +1,6 @@
-const confessionsData = require("../data/sampleData.json")
+const confessionsData = require("../data/data.json")
+const fs = require('fs')
+
 
 class Confession{
    constructor(data){
@@ -36,7 +38,7 @@ class Confession{
       const id = confessionsData.length + 1;
       const newConfession = new Confession({id : id, ...data});
       confessions.push(newConfession);
-      console.log(confessions)
+      Confession.saveData(confessions)
    }
 
    static findConfession(keyword) {
@@ -54,7 +56,6 @@ class Confession{
    static findByCategory(category) {
       // find all confessions of a given category
       const confessions = Confession.all;
-      console.log(confessions)
       return confessions.filter( confession => confession["category"] === category);
    }
 
@@ -81,6 +82,16 @@ class Confession{
          const comment = Confession.getCommentById(confession, commmentId)
          comment["reactions"][reaction] ++
       }
+   }
+
+   static saveData(data) {
+      // saving our data into data.json
+      fs.writeFile("./data/data.json", JSON.stringify(data), function(err) {
+         if(err) {
+            return console.log(err);
+         }
+         console.log("The file was saved!");
+      });
    }
 }
 
