@@ -28,9 +28,15 @@ router.get('/search/:keyword', (req, res) => {
 
 // /confessions/post
 router.post('/post', (req, res) => {
-    console.log(req.body)
     Confession.addConfession(req.body) 
 })
 
+router.post('/reaction', (req, res) => {
+    Confession.addReaction(req.body)
+})
+
+router.post('/postcomment', (req, res) => {
+    Confession.createComment(req.body)
+})
 
 module.exports = router;
