@@ -1,24 +1,24 @@
-let confessionContainer = document.querySelector(".row")
-fetch('http://localhost:3000/confessions').then(function(response) {
-  response.json().then(function(json){
-    for(item in json){
-        let newConfession = document.createElement('div');
-        let ConfessionPost = document.createElement('div');
-        newConfession.classList.add('.col-6');
-        newConfession.id = 'COL-6';
-        ConfessionPost.id = 'confessionPost';
-        let text = document.createTextNode(json[item].title);
-        ConfessionPost.append(text);
-        newConfession.append(ConfessionPost);
-        confessionContainer.append(newConfession);
-    }
-  })
-})
+// let confessionContainer = document.querySelector(".row")
+// fetch('http://localhost:3000/confessions').then(function(response) {
+//   response.json().then(function(json){
+//     for(item in json){
+//         let newConfession = document.createElement('div');
+//         let ConfessionPost = document.createElement('div');
+//         newConfession.classList.add('.col-6');
+//         newConfession.id = 'COL-6';
+//         ConfessionPost.id = 'confessionPost';
+//         let text = document.createTextNode(json[item].title);
+//         ConfessionPost.append(text);
+//         newConfession.append(ConfessionPost);
+//         confessionContainer.append(newConfession);
+//     }
+//   })
+// })
 
-const form = document.getElementById('form');
-const category = document.getElementById('category');
-const confession = document.getElementsByClassName('col-6');
-const title = document.getElementById('title');
+// const form = document.getElementById('form');
+// const category = document.getElementById('category');
+// const confession = document.getElementsByClassName('col-6');
+// const title = document.getElementById('title');
 
 
 // let userData
