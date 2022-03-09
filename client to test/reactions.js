@@ -87,4 +87,20 @@ document.getElementById('form').addEventListener('submit', e => {
 
 
 
- 
+ document.getElementById("delete").addEventListener("click", e => {
+    e.preventDefault()
+    
+    fetch("http://localhost:3000/confessions/delete", {
+      method : 'POST',
+      body: JSON.stringify({
+         id : 6, // id of the confession we want to delete
+      }),
+      headers : {
+         "Content-Type": "application/json; charset=UTF-8"
+      }
+   }) .then( response => {
+      return response.json()
+   }) .then( data => {
+      console.log(data)
+   })
+ })

@@ -37,7 +37,7 @@ class Confession{
       const confessions = Confession.all;
       const id = confessionsData.length + 1;
       const newConfession = new Confession({id : id, ...data});
-      confessions.push(newConfession);
+      confessions.unshift(newConfession);
       Confession.saveData(confessions)
    }
 
@@ -98,6 +98,16 @@ class Confession{
       })
       Confession.saveData(modified)
 
+   }
+
+   static removeConfession(id) {
+      const confessions = Confession.all
+      const modified = confessions.filter( confession => {
+         if (confession['id'] != id) {
+            return confession
+         }
+      })
+      Confession.saveData(modified)
    }
 
    static saveData(data) {

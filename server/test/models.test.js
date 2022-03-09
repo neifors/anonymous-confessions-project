@@ -60,5 +60,6 @@ describe("Confession model", () => {
       expect(comment["reactions"]["love"]).toBe(43)
    })
 
+   it('')
    
 })
