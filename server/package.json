@@ -10,7 +10,7 @@
     "dev": "nodemon index.js",
     "test": "jest --silent --watchAll",
     "coverage": "jest --coverage --silent",
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
