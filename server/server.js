@@ -16,4 +16,15 @@ app.get('/style.css', (req, res) => {
    res.sendFile('C:\\Users\\Isabel\\Documents\\FUTUREPROOF\\LAP-1 PROJECT\\server\\homepage\\style.css')
 })
 
+
+//const path = require('path')
+// app.get('/', (req, res) => {
+//    res.sendFile(path.join(__dirname, '/homepage/index.html'))
+//  })
+ 
+//  app.get('/style.css', (req, res) => {
+//    res.sendFile(path.join(__dirname, '/homepage/style.css'))
+//  })
+ 
+
 module.exports = app;
