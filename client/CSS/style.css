@@ -5,10 +5,6 @@ body{
     overflow-y: scroll;
     overflow-x: hidden;
     display: grid;
-    
-
-
-
 }
 
 h1{
@@ -38,27 +34,30 @@ h1:after{
     height: 45vh;
     background-color: #666666;
     display: grid;
-    grid-template-areas: "title catagory confession button"; 
+    grid-template-areas: "title catagory" "confession" "addGif button"; 
     grid-template-columns: 1fr 1fr;
 
 }
 
 #title{
+    transform: translate3d(-7.5vw,-12vh, 0);
     height: 23%;
-    width: 100%;
+    width: 85%;
     grid-area: title;
 }
 
-#catagory{
+#category{
+    transform: translate3d(13.5vw,-12vh, 0);
     height: 23%;
-    width: 100%;
+    width: 45%;
     grid-area: catagory;
 }
 
 #confession{
-    transform: translateY(-28%);
-    text-align: start;
-    height: 220%;
+    z-index: 1;
+    transform: translateY(-25%);
+    width: 31.8vw;
+    height: 180%;
     grid-area: confession;
     grid-row: 2;
     grid-column-start: 1;
@@ -66,7 +65,17 @@ h1:after{
     
 }
 
+#addGif{
+    z-index: 1;
+    transform: translate3d(-7.5vw,23vh, 0);
+    grid-area: add-Gif;
+    width: 130%;
+    height: 20%;
+
+}
+
 #submitConfession{
+    z-index: 1;
     height: 25%;
     grid-area: button;
     display: block;
@@ -131,6 +140,8 @@ h1:after{
     
     }
 
+
+
 }
 
 .screenContainer{
@@ -193,6 +204,26 @@ h1:after{
         margin-bottom: -4%;
     }
 
+    #title{
+        transform: translate3d(-11.9vw,-12vh, 0);
+        width: 20vw;
+    }
+
+    #category{
+        transform: translate3d(8.4vw,-12vh, 0);
+        width: 11.5vw;
+    }
+
+    #addGif{
+        transform: translate3d(-12vw,21.5vh, 0);
+        width: 158.5%;
+
+    
+    }
+    #submitConfession{
+        transform: translate3d(-6vw,300%, 0);
+    }
+
 }
 
 h3{
@@ -217,8 +248,21 @@ h3{
 
 }
 
-#reaction{
+#Icon{
+    background-color: #999999;
+    font-size: 150%;
     display: inline;
+    padding: 5px;
+    border-radius: 100px;
+}
+
+#commentIcon{
+    background-color: #999999;
     float: right;
-    padding: 1%;
+    font-size: 70%;
+    display: inline;
+    padding: 2px;
+    margin: 1%;
+    border-radius: 100px;
+
 }
