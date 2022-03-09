@@ -1,1 +1,0 @@
-# anonymous-confessions-project
