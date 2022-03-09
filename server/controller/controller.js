@@ -1,5 +1,12 @@
 const express = require('express')
 const router = express.Router()
+const bodyParser = require('body-parser');
+
+// support parsing of application/json type post data
+router.use(bodyParser.json());
+
+//support parsing of application/x-www-form-urlencoded post data
+router.use(bodyParser.urlencoded({ extended: true }));
 
 const Confession = require('../model/models')
 
@@ -28,7 +35,8 @@ router.get('/search/:keyword', (req, res) => {
 
 // /confessions/post
 router.post('/post', (req, res) => {
-    Confession.addConfession(req.body) 
+    console.log(req.body)
+    //Confession.addConfession(req.body)
 })
 
 // /confessions/reaction
