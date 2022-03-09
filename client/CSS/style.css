@@ -1,0 +1,192 @@
+body{
+    background-color: #999999;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: grid;
+    
+
+
+
+}
+
+h1{
+    text-align: center;
+    font-family: 'Dancing Script';
+    font-size: 500%;
+}
+
+h1:before{
+    content: 'Anon';
+    color: white;
+}
+
+h1:after{
+    content: 'Confessions';
+    color: black;
+}
+
+#input{
+    grid-area: inputConfession;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 10px;
+    margin: 5%;
+    margin-left: 10%;
+    padding:2%;
+    width: 36%;
+    height: 45vh;
+    background-color: #666666;
+    display: grid;
+    grid-template-areas: "title catagory confession button"; 
+    grid-template-columns: 1fr 1fr;
+
+}
+
+#title{
+    height: 23%;
+    width: 100%;
+    grid-area: title;
+}
+
+#catagory{
+    height: 23%;
+    width: 100%;
+    grid-area: catagory;
+}
+
+#confession{
+    transform: translateY(-28%);
+    text-align: start;
+    height: 220%;
+    grid-area: confession;
+    grid-row: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    
+}
+
+#submitConfession{
+    height: 25%;
+    grid-area: button;
+    display: block;
+    grid-row: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    transform: translateY(300%);
+}
+
+#container{
+    display: grid;
+    grid-template-areas: "inputConfession searchBar"; 
+    grid-template-columns: 1fr 1fr;
+    width: 200%;
+
+
+}
+
+#search{
+    height: 10%;
+    width: 37%;
+    grid-area: searchBar;
+    background-color: #666666;
+    margin: 5%;
+    padding:1%;
+    display: grid;
+    grid-template-areas: "search searchCatagory searchConfession"; 
+    grid-template-columns: 2fr 1fr 0.5fr;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    margin-left: 13.5%;
+
+}
+
+#searchBar{
+    grid-area: search;
+
+}
+
+#searchCatagory{
+    grid-area: searchCatagory;
+
+}
+
+#searchConfession{
+    grid-area: searchConfession;
+
+}
+
+
+@media screen and (max-width: 1000px){
+    #search{
+        grid-template-areas: "search searchCatagory searchConfession"; 
+        grid-template-columns: 1fr 0.7fr 0.5fr;
+        transform: translate3d(-170%, 0, 0);
+
+    }
+
+    #searchBar{
+        grid-area: search;
+        width: 94%;
+    
+    }
+
+}
+
+.screenContainer{
+    height: 1250%;
+    transform: translate3d(9.25%, -27.5%, 0);
+        
+}
+
+
+.confessionPost{
+    width: 75%;
+    height: 85%;
+    border-radius: 10px;
+    grid-area: confessionPost;
+    background-color: #666666;  
+    margin: 3%;
+    padding: 2%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    
+
+
+}
+
+.col-6{
+    margin-left: -10%;
+    margin-bottom: -4%;
+}
+
+
+@media screen and (min-width: 1000px){
+    #search{
+        width: 36.2%;
+        grid-template-areas: "search searchCatagory searchConfession"; 
+        grid-template-columns: 1fr 0.7fr 0.5fr;
+        transform: translate3d(-175%, 0, 0);
+
+    }
+
+
+    .screenContainer{
+        height: 1100%;
+        transform: translate3d(9.25%, -27%, 0);
+
+    }
+
+    .confessionPost{
+        width: 73%;
+        height: 70%;
+
+
+    }
+
+    .col-6{
+        margin-left: -10%;
+        margin-bottom: -4%;
+    }
+
+
+}
