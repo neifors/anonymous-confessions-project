@@ -1,0 +1,10 @@
+*.excalidraw
+**/node_modules
+*package-lock.json
+**/coverage
+
+npm-debug.log
+.DS_Store
+/*.env
+
+
