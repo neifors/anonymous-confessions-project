@@ -3,27 +3,42 @@ const router = express.Router()
 
 const Confession = require('../model/models')
 
-// http://localhost:3000/confessions/
+// /confessions/
 router.get('/', (req, res) => {
     res.send(Confession.all);
   })
   
 
-// http://localhost:3000/confessions/:id
+// /confessions/:id
 router.get('/:id', (req, res) => {
     res.send( Confession.getConfessionById(req.params.id))
 })
 
 
-// http://localhost:3000/confessions/category/:category
+// /confessions/category/:category
 router.get('/category/:category', (req, res) => {
     res.send( Confession.findByCategory(req.params.category))
 })
 
 
-// http://localhost:3000/confessions/search/:keyword
-router.get('/serch/:keyword', (req, res) => {
-    return Confession.findConfession(req.params.keyword)
+// /confessions/search/:keyword
+router.get('/search/:keyword', (req, res) => {
+    res.send(Confession.findConfession(req.params.keyword))
+})
+
+// /confessions/post
+router.post('/post', (req, res) => {
+    Confession.addConfession(req.body) 
+})
+
+// /confessions/reaction
+router.post('/reaction', (req, res) => {
+    Confession.addReaction(req.body)
+})
+
+// confessions/postComment
+router.post('/postComment', (req, res) => {
+    Confession.createComment(req.body)
 })
 
 module.exports = router;
