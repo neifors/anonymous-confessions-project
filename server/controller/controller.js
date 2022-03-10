@@ -46,22 +46,6 @@ router.get('/search/:keyword', (req, res) => {
 
 // /confessions/post
 router.post('/post', (req, res) => {
-    try{
-        Confession.addConfession(req.body) 
-        res.sendStatus(201)
-    } catch(err) {
-        res.status(404).send(err.message);
-    }
-})
-
-// /confessions/reaction
-router.post('/reaction', (req, res) => {
-    try{
-        Confession.addReaction(req.body)
-        res.sendStatus(201)
-    } catch(err) {
-        res.status(404).send(err.message);
-    }
 })
 
 // confessions/postComment

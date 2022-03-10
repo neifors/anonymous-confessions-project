@@ -5,10 +5,6 @@ body{
     overflow-y: scroll;
     overflow-x: hidden;
     display: grid;
-    
-
-
-
 }
 
 h1{
@@ -38,27 +34,30 @@ h1:after{
     height: 45vh;
     background-color: #666666;
     display: grid;
-    grid-template-areas: "title catagory confession button"; 
+    grid-template-areas: "title catagory" "confession" "addGif button"; 
     grid-template-columns: 1fr 1fr;
 
 }
 
 #title{
-    height: 23%;
-    width: 100%;
+    transform: translate3d(-7.5vw,-12vh,0);
+    height: 100%;
+    width: 50%;
     grid-area: title;
 }
 
-#catagory{
-    height: 23%;
-    width: 100%;
-    grid-area: catagory;
+#category{
+    transform: translate3d(13.7vw,-12vh, 0);
+    height: 100%;
+    width: 45%;
+    grid-area: category;
 }
 
 #confession{
-    transform: translateY(-28%);
-    text-align: start;
-    height: 220%;
+    z-index: 1;
+    transform: translateY(-25%);
+    width: 31.8vw;
+    height: 110%;
     grid-area: confession;
     grid-row: 2;
     grid-column-start: 1;
@@ -66,14 +65,25 @@ h1:after{
     
 }
 
+#addGif{
+    z-index: 1;
+    transform: translate3d(-7.5vw,23vh, 0);
+    grid-area: add-Gif;
+    width: 130%;
+    height: 20%;
+
+}
+
 #submitConfession{
-    height: 25%;
+    z-index: 1;
+    height: 16%;
     grid-area: button;
     display: block;
     grid-row: 3;
     grid-column-start: 2;
     grid-column-end: 3;
     transform: translateY(300%);
+    top: 20px;
 }
 
 #container{
@@ -127,26 +137,32 @@ h1:after{
 
     #searchBar{
         grid-area: search;
-        width: 94%;
+        width: 95%;
     
     }
+
+
 
 }
 
 .screenContainer{
-    height: 1250%;
-    transform: translate3d(9.25%, -27.5%, 0);
+    position: absolute;
+    height: auto;
+    transform: translate3d(9.25%, 19vh, 0);
         
 }
 
 
-.confessionPost{
+#confessionPost{
+    overflow-y: scroll;
     width: 75%;
-    height: 85%;
+    height: 36.5vh;
     border-radius: 10px;
     grid-area: confessionPost;
     background-color: #666666;  
     margin: 3%;
+    margin-bottom: 10%;
+    margin-top: 10.25%;
     padding: 2%;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     
@@ -154,9 +170,9 @@ h1:after{
 
 }
 
-.col-6{
+#COL-6{
     margin-left: -10%;
-    margin-bottom: -4%;
+    margin-bottom: -3%;
 }
 
 
@@ -171,22 +187,124 @@ h1:after{
 
 
     .screenContainer{
-        height: 1100%;
-        transform: translate3d(9.25%, -27%, 0);
+        height: auto;
+        transform: translate3d(9.25%, 23.25vh, 0);
 
     }
 
-    .confessionPost{
+    #confessionPost{
         width: 73%;
-        height: 70%;
+        height: 37vh;
+        margin-top: 5%;
 
 
     }
 
-    .col-6{
+    #COL-6{
         margin-left: -10%;
         margin-bottom: -4%;
     }
 
+    #title{
+        transform: translate3d(-32vw,-12vh, 0);
+        width: 20vw;
+    }
 
+    #category{
+        transform: translate3d(-11vw,-12vh, 0);
+        width: 11.5vw;
+    }
+
+    #addGif{
+        transform: translate3d(-32vw,21.5vh, 0);
+        width: 158.5%;
+
+    
+    }
+    #submitConfession{
+        transform: translate3d(-6vw,300%, 0);
+    }
+
+}
+
+h3{
+    font-size: 150%;
+}
+
+#addComment{
+    width: 100%;
+    border-radius: 10px;
+    position: sticky;
+    
+
+}
+
+#commentContainer{
+    margin: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-top:black;
+    border-left: black;
+    border-right: black;
+
+}
+
+#closeButton{
+    transform: translateY(-20px);
+    float: right;
+    font-size: 150%;
+    display: inline;
+    right: 0;
+    padding: 7px;
+    margin: 5px;
+    border-radius: 100px;
+    letter-spacing: 3px;
+}
+
+#hateIcon{
+    background-color: #999999;
+    font-size: 150%;
+    display: inline;
+    padding: 7px;
+    margin: 5px;
+    border-radius: 100px;
+    letter-spacing: 3px;
+}
+
+#shockIcon{
+    background-color: #999999;
+    font-size: 150%;
+    display: inline;
+    padding: 7px;
+    margin: 5px;
+    border-radius: 100px;
+    letter-spacing: 3px;
+}
+
+#happyIcon{
+    
+    background-color: #999999;
+    font-size: 150%;
+    display: inline;
+    padding: 7px;
+    margin: 5px;
+    border-radius: 100px;
+    letter-spacing: 3px;
+}
+
+#hatecommentIcon{
+    background-color: #999999;
+    float: right;
+    font-size: 70%;
+    display: inline;
+    padding: 2px;
+    margin: 1%;
+    border-radius: 100px;
+    letter-spacing: 3px;
+}
+
+
+
+#idofConfession{
+    display: inline
 }

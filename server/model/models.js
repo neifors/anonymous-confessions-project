@@ -77,7 +77,7 @@ class Confession{
          return confession
       })
       Confession.saveData(modified)
-      return modified
+      
    }
 
    static addReaction(data) {
@@ -101,6 +101,16 @@ class Confession{
       })
       Confession.saveData(modified)
       return modified
+   }
+
+   static removeConfession(id) {
+      const confessions = Confession.all
+      const modified = confessions.filter( confession => {
+         if (confession['id'] != id) {
+            return confession
+         }
+      })
+      Confession.saveData(modified)
    }
 
    static removeConfession(id) {

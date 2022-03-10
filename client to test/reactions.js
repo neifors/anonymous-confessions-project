@@ -18,7 +18,6 @@ document.getElementById("like").addEventListener("click", e => {
    })
 
 })
-
 document.getElementById("love").addEventListener("click", e => {
    e.preventDefault()
 
