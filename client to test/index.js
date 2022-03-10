@@ -5,7 +5,7 @@ document.getElementById("form").addEventListener("submit", event => {
 //const serverUrl = "https://anonconfess.herokuapp.com/" || "http://localhost:3000/confessions/post"
 
 
-   fetch("/post", {
+   fetch("http://localhost:3000/confessions/post", {
       method : 'POST',
       mode: 'no-cors',
       body: JSON.stringify({
