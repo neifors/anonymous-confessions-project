@@ -12,8 +12,14 @@ We were asked to create a website where users should be able to post journal ent
 
 - Server:
 	- Creating a Data Structure prototype to start working with. 
+
    ![data structure](./Documentation/data%20structure2.png "proposed data structure")
 	- Using that prototype to create a model and all the methods we decided the object should have. 
+	- Writting a data sample to work with. A JSON file where all our data will be saved.
+	- Endpoints and functionality. All the urls the client needs to communicate with the server.
+	- Using GET, POST and DELETE methods.
+	- Creating really simple clients to play around with the server and checking the post and delete methods.
+	- Testing by using jest and supertest *(A library for testing node.js HTTP servers)*
   
 
 - Client:
