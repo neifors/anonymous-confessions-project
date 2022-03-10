@@ -39,7 +39,7 @@ router.get('/search/:keyword', (req, res) => {
 router.post('/post', (req, res) => {
     //console.log(req)
     //console.log(req.body)
-    Confession.addConfession(req.body)
+    res.send(Confession.addConfession(req.body))
 })
 
 // /confessions/reaction
