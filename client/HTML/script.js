@@ -266,7 +266,7 @@ function fetchCon(string = "") {
   
             
             fetch("http://localhost:3000/confessions/delete", {
-              method : 'POST',
+              method : 'DELETE',
               body: JSON.stringify({
                  id : confessioniD, 
               }),
