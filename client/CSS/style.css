@@ -205,17 +205,17 @@ h1:after{
     }
 
     #title{
-        transform: translate3d(-11.9vw,-12vh, 0);
+        transform: translate3d(-32vw,-12vh, 0);
         width: 20vw;
     }
 
     #category{
-        transform: translate3d(8.4vw,-12vh, 0);
+        transform: translate3d(-11vw,-12vh, 0);
         width: 11.5vw;
     }
 
     #addGif{
-        transform: translate3d(-12vw,21.5vh, 0);
+        transform: translate3d(-32vw,21.5vh, 0);
         width: 158.5%;
 
     
@@ -265,4 +265,8 @@ h3{
     margin: 1%;
     border-radius: 100px;
 
+}
+
+#idofConfession{
+    display: inline
 }

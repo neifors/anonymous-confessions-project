@@ -19,17 +19,19 @@
   "bugs": {
     "url": "https://github.com/neifors/anonymous-confessions-project/issues"
   },
-  
   "homepage": "https://github.com/neifors/anonymous-confessions-project#readme",
   "dependencies": {
-    "nodemon": "^2.0.15",
+    "cors": "^2.8.5",
     "supertest": "^6.2.2",
     "watchify": "^4.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
   "scripts": {
     "test": "jest",
     "coverage": "jest --coverage",
-    "start": "node index.js"
+    "start": "node index.js",
+    "run": "nodemon index.js"
   }
 }

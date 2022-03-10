@@ -24,13 +24,13 @@
     <div id='container'>
         <!--Section for input-->
         <form id="input">
-            <input id="title" type='text' placeholder="Title">
+            <input id="title" type='text' placeholder="Title" required>
             <select id="category">
                 <option value="Category">Category</option>
                 <option value="Funny">Funny</option>
                 <option value="Sad">Sad</option>
                 <option value="Disgusting">Disgusting</option>
-                <option value="Disgusting">Cruel</option>
+                <option value="Cruel">Cruel</option>
             </select>
             <textarea id="confession" type='text' placeholder='Confession...'></textarea>
             <input id="addGif" type='text' placeholder='Add Gif...'>
@@ -39,7 +39,7 @@
 
         <!--Sort by category or title-->
         <form id="search">
-            <input id="searchBar" type='text' placeholder="Search...">
+            <input id="searchBar" type='text' placeholder="Search..." required>
             <select id="searchCategory">
                 <option value="Category">Category</option>
                 <option value="Funny">Funny</option>
@@ -60,6 +60,7 @@
             </div>
             <div class="col-6" id="COL-6">
                 <div id="confessionPost">
+                    <h6 id ='idofConfession'>id</h6> 
                     <h3>Example title</h3>
                     <i class="fa-regular fa-face-tired" id="Icon"></i>
                     <i class="fa-regular fa-face-surprise" id="Icon"></i>
@@ -80,23 +81,6 @@
                         <i class="fa-regular fa-face-grin-beam" id="commentIcon"></i>
                     </section>
                 </div>
-            </div>
-
-            <div class="col-6" id="COL-6">
-                <div id="confessionPost"><h5>catagory</h5></div>
-            </div>
-            <div class="col-6" id="COL-6">
-                <div id="confessionPost"><h5>catagory,cldl</h5></div>
-            </div>
-            <div class="col-6" id="COL-6">
-                <div id="confessionPost"><h5>cdlk</h5></div>
-            </div>
-            <div class="col-6" id="COL-6">
-                <div id="confessionPost"><h5>wooop</h5></div>
-            </div>
-            <div class="col-6" id="COL-6">
-                <div id="confessionPost"><h5>wooop</h5></div>
-                
             </div>
 
         </div>
