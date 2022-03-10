@@ -77,7 +77,7 @@ class Confession{
          return confession
       })
       Confession.saveData(modified)
-      return modified
+      
    }
 
    static addReaction(data) {

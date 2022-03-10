@@ -40,24 +40,24 @@ h1:after{
 }
 
 #title{
-    transform: translate3d(-7.5vw,-12vh, 0);
-    height: 23%;
-    width: 85%;
+    transform: translate3d(-7.5vw,-12vh,0);
+    height: 100%;
+    width: 50%;
     grid-area: title;
 }
 
 #category{
-    transform: translate3d(13.5vw,-12vh, 0);
-    height: 23%;
+    transform: translate3d(13.7vw,-12vh, 0);
+    height: 100%;
     width: 45%;
-    grid-area: catagory;
+    grid-area: category;
 }
 
 #confession{
     z-index: 1;
     transform: translateY(-25%);
     width: 31.8vw;
-    height: 180%;
+    height: 110%;
     grid-area: confession;
     grid-row: 2;
     grid-column-start: 1;
@@ -76,13 +76,14 @@ h1:after{
 
 #submitConfession{
     z-index: 1;
-    height: 25%;
+    height: 16%;
     grid-area: button;
     display: block;
     grid-row: 3;
     grid-column-start: 2;
     grid-column-end: 3;
     transform: translateY(300%);
+    top: 20px;
 }
 
 #container{
