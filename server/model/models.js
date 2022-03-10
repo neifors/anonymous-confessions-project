@@ -29,7 +29,7 @@ class Confession{
 
    static getCommentById(confession, id) {
       // returns the comment with the given id inside the given confession
-      const comment = confession["comments"].find(comment => comment["id"] === id);
+      const comment = confession["comments"].find(comment => comment["id"] == id);
       return comment;
    }
 
@@ -65,7 +65,7 @@ class Confession{
       // create a comment into a confession with the received id
       const confessions = Confession.all
       const modified = confessions.map( confession => {
-         if (confession['id'] === data.id) {
+         if (confession['id'] == data.id) {
             const commentId = confession["comments"].length + 1;
             confession["comments"].unshift({
                "id" : commentId, 
@@ -77,7 +77,7 @@ class Confession{
          return confession
       })
       Confession.saveData(modified)
-      return modified
+      
    }
 
    static addReaction(data) {
@@ -88,7 +88,7 @@ class Confession{
       const modified = confessions.map( confession => {
          if (confession['id'] == data.idConfession) {
 
-            if (data.idComment === 0) {
+            if (data.idComment == 0) {
                confession["reactions"][data.reaction] ++;
                console.log(data.reaction+" +1 for comment with id: "+data.idConfession)
             } else {

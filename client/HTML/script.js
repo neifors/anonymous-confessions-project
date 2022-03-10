@@ -252,11 +252,6 @@ function fetchCon(string = "") {
            }) 
          }
   
-  
-  
-        
-  
-  
       })
       
   
@@ -292,12 +287,6 @@ function fetchCon(string = "") {
 
 
     })
-    
-    
-    
-    
-    
-    
 
   })
 }

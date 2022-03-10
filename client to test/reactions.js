@@ -68,7 +68,7 @@ document.getElementById('form').addEventListener('submit', e => {
       fetch("http://localhost:3000/confessions/postComment", {
          method : 'POST',
          body: JSON.stringify({
-            id : 5, // id of the confession where we want to add the comment
+            id : 0, // id of the confession where we want to add the comment
             comment : document.getElementById("comment").value, // comment text
             gif : document.getElementById("gif").value === undefined ? "" : document.getElementById("gif").value // if has not gif, send an empty string
          }),
