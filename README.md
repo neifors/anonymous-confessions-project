@@ -11,8 +11,8 @@ Arvin todo
 ----------------------------------------------------
 Harry todo
 [] fix height changing display layout
-[] add mobile view
-[] add comment section and reactions
+[x] add mobile view
+[x] add comment section and reactions
 [] limit text input
 [] test!
 ----------------------------------------------------
