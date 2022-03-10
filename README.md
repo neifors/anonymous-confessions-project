@@ -1,5 +1,5 @@
 
-# LAP 1 Project: Anonymous Confessions
+# LAP 1 PROJECT: ANONYMOUS CONFESSIONS
 
 BY [Arvin Jhurry](https://github.com/ArvinJhurry), [Anh Nguyen](https://github.com/hihaianh), [Harry Moore](https://github.com/umalik00), [Isabel Repetto](https://github.com/neifors)
 
@@ -7,7 +7,7 @@ BY [Arvin Jhurry](https://github.com/ArvinJhurry), [Anh Nguyen](https://github.c
 
 We were asked to create a website where users should be able to post journal entries anonymously. We all decided during our first meeting the website would be about anonymous confessions. Somewhere to be free to confess anything being able to share a gif if that helps you to express your confession better. Users can react with emojis to others confessions and also leave a comment. 
 
-## Process
+## PROCESS
 - Meeting to plan how to approach the work and how the distribution of task was going to be.
 
 - Server:
@@ -27,23 +27,39 @@ We were asked to create a website where users should be able to post journal ent
 	- ()
 	- ()
 	
-## How to use it
+## HOW TO USE IT
  - Clone this repository
  - Server
  	- Using git bash or your terminal go into the server folder
 		- `npm intall` --will install all the dependencies you need to execute this server
 		- `npm run dev` --using **nodemon** will run the server into localhost:3000
 	- Dependencies are
-	    - "cors": "^2.8.5",
-	    - "express": "^4.17.3",
-	    - "jest": "^27.5.1",
-	    - "nodemon": "^2.0.15",
-	    - "supertest": "^6.2.2",
-	    - "watchify": "^4.0.0"
+	    - cors
+	    - express
+	    - jest / supertest / coverage
+	    - nodemon
+	    - supertest
+	    - watchify
 
  - Client
 	- ()
 	- ()
 	- () 
 	
+## WINS AND CHALLENGES
+### WINS
+ - Successfully managed to produce a site which met all of the basic requirements.
+ - Server successfully deployed on Heroku
+ - Achieved over 70% test coverage for server.
+ - ()
+ - ()
+ - ()
 
+### CHALLENGES
+ - ()
+ - ()
+ - ()
+
+## HOW IS FINALLY LOOKING
+
+ ---need to upload the images--- having some problems to push
