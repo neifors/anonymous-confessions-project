@@ -31,15 +31,15 @@ We were asked to create a website where users should be able to post journal ent
  - Clone this repository
  - Server
  	- Using git bash or your terminal go into the server folder
-		`npm intall` --will install all the dependencies you need to execute this server
-		`npm run dev` --using **nodemon** will run the server into localhost:3000
+		- `npm intall` --will install all the dependencies you need to execute this server
+		- `npm run dev` --using **nodemon** will run the server into localhost:3000
 	- Dependencies are
-		    "cors": "^2.8.5",
-		    "express": "^4.17.3",
-		    "jest": "^27.5.1",
-		    "nodemon": "^2.0.15",
-		    "supertest": "^6.2.2",
-		    "watchify": "^4.0.0"
+	    - "cors": "^2.8.5",
+	    - "express": "^4.17.3",
+	    - "jest": "^27.5.1",
+	    - "nodemon": "^2.0.15",
+	    - "supertest": "^6.2.2",
+	    - "watchify": "^4.0.0"
 
  - Client
 	- ()
