@@ -151,7 +151,7 @@
             "message": "This is a test comment",
             "gif": "",
             "reactions": {
-               "like": 1,
+               "like": 0,
                "love": 0,
                "hate": 0
             }
@@ -161,7 +161,7 @@
       "reactions": {
          "like": 0,
          "love": 0,
-         "hate": 1
+         "hate": 0
       }
    }
 ]

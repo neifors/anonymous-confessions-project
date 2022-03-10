@@ -34,17 +34,6 @@ describe("Confession model", () => {
       reactions : {"like" : 1, "love" : 0, "hate" : 2}
    };
 
-   const testConfessReaction = {
-      "idConfession" : 0, 
-      "idComment" : 0, 
-      "reaction" : "hate" 
-   }
-
-   const testCommentReaction = {
-      "idConfession" : 0, 
-      "idComment" : 1, 
-      "reaction" : "like" 
-   }
 
    it("should make an instance of a confession", () => {
       const confession = new Confession({ ...testConfession });
@@ -86,12 +75,6 @@ describe("Confession model", () => {
       expect(confessions[0]["id"]).toEqual(0)
    })
 
-   it('should return confessions containing a keyword into the title', () => {
-      const confessions =  Confession.findConfession('bad')
-      expect(confessions.length).toBe(1)
-      expect(confessions[0].category).toBe("thoughs")
-   })
-
    it('should add a new confession at the beginning of the data file', () => {
 
       const lengthConf = (Confession.all).length
@@ -99,6 +82,12 @@ describe("Confession model", () => {
       expect(confessions[0]["title"]).toBe("test title")
       expect(confessions[0]["message"]).toBe("test message")
       expect(confessions.length - 1).toEqual(lengthConf)
+   })
+
+   it('should return confessions containing a keyword into the title', () => {
+      const confessions =  Confession.findConfession('bad')
+      expect(confessions.length).toBe(1)
+      expect(confessions[0].category).toBe("thoughs")
    })
 
 
@@ -109,13 +98,33 @@ describe("Confession model", () => {
       expect(comment["reactions"]["love"]).toBe(43)
    })
 
-   
+
+})
+
+
+describe("Reactions", () => {
+
+   const testConfessReaction = {
+      "idConfession" : 0, 
+      "idComment" : 0, 
+      "reaction" : "hate" 
+   }
+
+   const testCommentReaction = {
+      "idConfession" : 0, 
+      "idComment" : 1, 
+      "reaction" : "like" 
+   }
+
+       
    it("add reaction to a confession with id 0", () => {
 
       const conf = Confession.getConfessionById(0)
       const before = conf["reactions"]["hate"]
       const confessions = Confession.addReaction(testConfessReaction)
       const confess = confessions.find( conf => conf["id"] === 0)
+
+
       expect(confess["reactions"]["hate"]).toBe(before+1)
    })
 
@@ -125,8 +134,9 @@ describe("Confession model", () => {
       const before = conf["comments"][conf["comments"].length-1]["reactions"]["like"]
       const confessions = Confession.addReaction(testCommentReaction)
       const confess = confessions.find( conf => conf["id"] === 0)
+
+
       expect(confess["comments"][confess["comments"].length-1]["reactions"]["like"]).toBe(before+1)
    })
 
-   
 })
