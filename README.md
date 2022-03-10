@@ -16,13 +16,34 @@ We were asked to create a website where users should be able to post journal ent
    ![data structure](./Documentation/data%20structure2.png "proposed data structure")
 	- Using that prototype to create a model and all the methods we decided the object should have. 
 	- Writting a data sample to work with. A JSON file where all our data will be saved.
-	- Endpoints and functionality. All the urls the client needs to communicate with the server.
-	- Using GET, POST and DELETE methods.
-	- Creating really simple clients to play around with the server and checking the post and delete methods.
-	- Testing by using jest and supertest *(A library for testing node.js HTTP servers)*
-  
+	- Installing **Express.js** which is a modular web framework for Node.js used for easier creation of web applications and services.
+	- Building endpoints and functionality. All the urls and behaviors the client needs to communicate with the server (GET, POST and DELETE methods).
+	- Creating really simple clients to play around with the server and checking the post and delete methods mostly.
+	- Testing by using **jest** and **supertest** *(A library for testing node.js HTTP servers)*
+	- Deployed on [Heroku](https://dashboard.heroku.com/)
 
 - Client:
+	- ()
+	- ()
+	- ()
+	
+## How to use it
+ - Clone this repository
+ - Server
+ 	- Using git bash or your terminal go into the server folder
+		`npm intall` --will install all the dependencies you need to execute this server
+		`npm run dev` --using **nodemon** will run the server into localhost:3000
+	- Dependencies are
+		    "cors": "^2.8.5",
+		    "express": "^4.17.3",
+		    "jest": "^27.5.1",
+		    "nodemon": "^2.0.15",
+		    "supertest": "^6.2.2",
+		    "watchify": "^4.0.0"
 
+ - Client
+	- ()
+	- ()
+	- () 
+	
 
-- Deployment:
