@@ -28,7 +28,8 @@ router.get('/search/:keyword', (req, res) => {
 
 // /confessions/post
 router.post('/post', (req, res) => {
-    Confession.addConfession(req.body) 
+    Confession.addConfession(req.body);
+    
 })
 
 // /confessions/reaction
@@ -39,6 +40,11 @@ router.post('/reaction', (req, res) => {
 // confessions/postComment
 router.post('/postComment', (req, res) => {
     Confession.createComment(req.body)
+})
+
+// /confessions/delete
+router.post('/delete', (req, res) => {
+    Confession.removeConfession(req.body.id)
 })
 
 module.exports = router;
