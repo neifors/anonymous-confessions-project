@@ -5,46 +5,72 @@ const Confession = require('../model/models')
 
 // /confessions/
 router.get('/', (req, res) => {
-    res.send(Confession.all);
+    try{
+        res.status(200).send(Confession.all)
+    } catch(err) {
+        res.status(404).send(err.message);
+    }
   })
   
 
 // /confessions/:id
 router.get('/:id', (req, res) => {
-    res.send( Confession.getConfessionById(req.params.id))
+    try{
+        if(typeof req.params.id === Number) {
+            res.status(200).send(Confession.getConfessionById(req.params.id))
+        }
+    } catch(err) {
+        res.status(404).send(err.message);
+    }
 })
 
 
 // /confessions/category/:category
 router.get('/category/:category', (req, res) => {
-    res.send( Confession.findByCategory(req.params.category))
+    try{
+        res.status(200).send(Confession.findByCategory(req.params.category))
+    } catch(err) {
+        res.status(404).send(err.message);
+    }
 })
 
 
 // /confessions/search/:keyword
 router.get('/search/:keyword', (req, res) => {
-    res.send(Confession.findConfession(req.params.keyword))
+    try{
+        res.status(200).send(Confession.findConfession(req.params.keyword))
+    } catch(err) {
+        res.status(404).send(err.message);
+    }
 })
 
 // /confessions/post
 router.post('/post', (req, res) => {
-    Confession.addConfession(req.body);
-})
-
-// /confessions/reaction
-router.post('/reaction', (req, res) => {
-
-    Confession.addReaction(req.body)
 })
 
 // confessions/postComment
 router.post('/postComment', (req, res) => {
-    Confession.createComment(req.body)
+    try{
+        Confession.createComment(req.body)
+        res.sendStatus(201)
+    } catch(err) {
+        res.status(404).send(err.message);
+    }
 })
 
 // /confessions/delete
-router.post('/delete', (req, res) => {
-    Confession.removeConfession(req.body.id)
+router.delete('/delete', (req, res) => {
+    try{
+        const confess = Confession.getConfessionById(req.body.id)
+        if(confess) {
+            Confession.removeConfession(req.body.id)
+            res.sendStatus(204)
+        }
+        else
+          throw new Error(`${req.body.id} does not exist`)
+      } catch(err) {
+        res.status(404).send(err.message);
+      }
 })
 
 module.exports = router;
