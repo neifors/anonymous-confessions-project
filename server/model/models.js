@@ -1,4 +1,4 @@
-const confessionsData = require("../data/data.json")
+// const confessionsData = require("../data/data.json")
 const fs = require('fs')
 
 
@@ -15,6 +15,7 @@ class Confession{
 
    static get all() {
       // returns all the posts saved into ./data/data.json
+      const confessionsData = require("../data/data.json")
       const confessions = confessionsData.map(confession => new Confession(confession));
       return confessions;
    }
@@ -35,10 +36,11 @@ class Confession{
    static addConfession(data) {
       // save a new post into our data.json 
       const confessions = Confession.all;
-      const id = confessionsData.length + 1;
+      const id = confessions.length;
       const newConfession = new Confession({id : id, ...data});
       confessions.unshift(newConfession);
       Confession.saveData(confessions)
+      return confessions
    }
 
    static findConfession(keyword) {
@@ -63,9 +65,9 @@ class Confession{
       // create a comment into a confession with the received id
       const confessions = Confession.all
       const modified = confessions.map( confession => {
-         if (confession['id'] == data.id) {
+         if (confession['id'] === data.id) {
             const commentId = confession["comments"].length + 1;
-            confession["comments"].push({
+            confession["comments"].unshift({
                "id" : commentId, 
                "message": data.comment, 
                "gif": data.gif, 
@@ -75,6 +77,7 @@ class Confession{
          return confession
       })
       Confession.saveData(modified)
+      return modified
    }
 
    static addReaction(data) {
@@ -97,7 +100,17 @@ class Confession{
          return confession
       })
       Confession.saveData(modified)
+      return modified
+   }
 
+   static removeConfession(id) {
+      const confessions = Confession.all
+      const modified = confessions.filter( confession => {
+         if (confession['id'] != id) {
+            return confession
+         }
+      })
+      Confession.saveData(modified)
    }
 
    static removeConfession(id) {

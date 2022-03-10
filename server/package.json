@@ -1,38 +1,39 @@
 
 {
-    "name": "server",
-    "version": "1.0.0",
-    "description": "API for confessions website",
-    "main": "index.js",
-    "directories": {
-      "test": "test"
-    },
-    "scripts": {
-      "dev": "nodemon index.js",
-      "test": "jest --silent --watchAll",
-      "coverage": "jest --coverage --silent",
-      "start": "node server.js"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/neifors/anonymous-confessions-project.git"
-    },
-    "keywords": [
-      "API",
-      "confessions"
-    ],
-    "author": "Anh Nguyen, Arvin Jhurry, Harry Moore, Isabel Repetto",
-    "license": "ISC",
-    "bugs": {
-      "url": "https://github.com/neifors/anonymous-confessions-project/issues"
-    },
-    "homepage": "https://github.com/neifors/anonymous-confessions-project#readme",
-    "dependencies": {
-      "cors": "^2.8.5",
-      "express": "^4.17.3",
-      "jest": "^27.5.1",
-      "nodemon": "^2.0.15",
-      "supertest": "^6.2.2",
-      "watchify": "^4.0.0"
-    }
+  "name": "server",
+  "version": "1.0.0",
+  "description": "API for confessions website",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "jest --silent --watchAll",
+    "coverage": "jest --coverage --silent",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neifors/anonymous-confessions-project.git"
+  },
+  "keywords": [
+    "API",
+    "confessions"
+  ],
+  "author": "Anh Nguyen, Arvin Jhurry, Harry Moore, Isabel Repetto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neifors/anonymous-confessions-project/issues"
+  },
+  "homepage": "https://github.com/neifors/anonymous-confessions-project#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.2.2",
+    "watchify": "^4.0.0"
   }
+}
+

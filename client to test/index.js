@@ -2,7 +2,7 @@ document.getElementById("form").addEventListener("submit", event => {
    event.preventDefault()
 
 
-   fetch("http://localhost:3000/confessions/post", {
+   fetch("https://anonconfess.herokuapp.com/confessions/post", {
       method : 'POST',
       body: JSON.stringify({
          title : document.getElementById("title").value,
