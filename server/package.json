@@ -1,3 +1,4 @@
+
 {
   "name": "server",
   "version": "1.0.0",
@@ -5,6 +6,12 @@
   "main": "index.js",
   "directories": {
     "test": "test"
+  },
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "jest --silent --watchAll",
+    "coverage": "jest --coverage --silent",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -14,7 +21,7 @@
     "API",
     "confessions"
   ],
-  "author": "",
+  "author": "Anh Nguyen, Arvin Jhurry, Harry Moore, Isabel Repetto",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/neifors/anonymous-confessions-project/issues"
@@ -27,11 +34,6 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
-  },
-  "scripts": {
-    "test": "jest",
-    "coverage": "jest --coverage",
-    "start": "node index.js",
-    "run": "nodemon index.js"
   }
 }
+

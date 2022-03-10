@@ -3,7 +3,9 @@ const app = express()
 const router = require('./controller/controller.js')
 const cors = require('cors');
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+   origin : "*"
+}));
 
 app.use(express.json())
 app.use('/confessions', router)

@@ -248,15 +248,50 @@ h3{
 
 }
 
-#Icon{
+#closeButton{
+    transform: translateY(-20px);
+    float: right;
+    font-size: 150%;
+    display: inline;
+    right: 0;
+    padding: 7px;
+    margin: 5px;
+    border-radius: 100px;
+    letter-spacing: 3px;
+}
+
+#hateIcon{
     background-color: #999999;
     font-size: 150%;
     display: inline;
-    padding: 5px;
+    padding: 7px;
+    margin: 5px;
     border-radius: 100px;
+    letter-spacing: 3px;
 }
 
-#commentIcon{
+#shockIcon{
+    background-color: #999999;
+    font-size: 150%;
+    display: inline;
+    padding: 7px;
+    margin: 5px;
+    border-radius: 100px;
+    letter-spacing: 3px;
+}
+
+#happyIcon{
+    
+    background-color: #999999;
+    font-size: 150%;
+    display: inline;
+    padding: 7px;
+    margin: 5px;
+    border-radius: 100px;
+    letter-spacing: 3px;
+}
+
+#hatecommentIcon{
     background-color: #999999;
     float: right;
     font-size: 70%;
@@ -264,8 +299,10 @@ h3{
     padding: 2px;
     margin: 1%;
     border-radius: 100px;
-
+    letter-spacing: 3px;
 }
+
+
 
 #idofConfession{
     display: inline
