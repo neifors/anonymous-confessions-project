@@ -147,6 +147,16 @@
       "category": "test",
       "comments": [
          {
+            "id": 2,
+            "message": "this is another test",
+            "gif": "",
+            "reactions": {
+               "like": 0,
+               "love": 0,
+               "hate": 0
+            }
+         },
+         {
             "id": 1,
             "message": "This is a test comment",
             "gif": "",

@@ -16,7 +16,9 @@ router.get('/', (req, res) => {
 // /confessions/:id
 router.get('/:id', (req, res) => {
     try{
-        res.status(200).send(Confession.getConfessionById(req.params.id))
+        if(typeof req.params.id === Number) {
+            res.status(200).send(Confession.getConfessionById(req.params.id))
+        }
     } catch(err) {
         res.status(404).send(err.message);
     }
