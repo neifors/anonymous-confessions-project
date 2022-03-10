@@ -4,8 +4,8 @@ document.getElementById("like").addEventListener("click", e => {
    fetch("http://localhost:3000/confessions/reaction", {
       method : 'POST',
       body: JSON.stringify({
-         idConfession : 2, // id of the confession where we want to add the reaction || id of confession containing the comment we want to add the raction
-         idComment : 0, // if we want to add a reaction to a confession (not to a comment) send this with value 0
+         idConfession : 5, // id of the confession where we want to add the reaction || id of confession containing the comment we want to add the raction
+         idComment : 1, // if we want to add a reaction to a confession (not to a comment) send this with value 0
          reaction : "like" // name of reaction
       }),
       headers : {
@@ -25,8 +25,8 @@ document.getElementById("love").addEventListener("click", e => {
    fetch("http://localhost:3000/confessions/reaction", {
       method : 'POST',
       body: JSON.stringify({
-         idConfession : 2, // id of the confession where we want to add the reaction || id of confession containing the comment we want to add the raction
-         idComment : 0, // if we want to add a reaction to a confession (not to a comment) send this with value 0
+         idConfession : 5, // id of the confession where we want to add the reaction || id of confession containing the comment we want to add the raction
+         idComment : 1, // if we want to add a reaction to a confession (not to a comment) send this with value 0
          reaction : "love" // name of reaction
       }),
       headers : {
@@ -46,8 +46,8 @@ document.getElementById("hate").addEventListener("click", e => {
    fetch("http://localhost:3000/confessions/reaction", {
       method : 'POST',
       body: JSON.stringify({
-         idConfession : 2, // id of the confession where we want to add the reaction || id of confession containing the comment we want to add the raction
-         idComment : 0, // if we want to add a reaction to a confession (not to a comment) send this with value 0
+         idConfession : 5, // id of the confession where we want to add the reaction || id of confession containing the comment we want to add the raction
+         idComment : 1, // if we want to add a reaction to a confession (not to a comment) send this with value 0
          reaction : "hate" // name of reaction
       }),
       headers : {
@@ -87,4 +87,16 @@ document.getElementById('form').addEventListener('submit', e => {
 
 
 
- 
+ document.getElementById("delete").addEventListener("click", e => {
+    e.preventDefault()
+    
+    fetch("http://localhost:3000/confessions/delete", {
+      method : 'POST',
+      body: JSON.stringify({
+         id : 6, // id of the confession we want to delete
+      }),
+      headers : {
+         "Content-Type": "application/json; charset=UTF-8"
+      }
+   }) 
+ })
