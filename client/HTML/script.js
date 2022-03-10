@@ -8,7 +8,7 @@ let searchTerm = document.querySelector('#searchBar');
 let category = document.querySelector('h5')
 let Col = document.querySelector('COL-6');
 let allID = document.querySelectorAll('h6');
-let allCommentBoxes = document.querySelectorAll('#addComment');
+
 
 
 
@@ -261,7 +261,7 @@ function fetchCon(string = "") {
       
   
     }).then(() => {
-      allCommentBoxes = document.querySelectorAll('#addComment').forEach(commentBox => {
+      allCommentBoxes = document.querySelectorAll('.classComment').forEach(commentBox => {
         commentBox.addEventListener('keyup', commentPost);
         function commentPost(event) {
           
@@ -273,7 +273,7 @@ function fetchCon(string = "") {
             fetch("http://localhost:3000/confessions/postComment", {
               method: 'POST',
               body: JSON.stringify({
-                id: targetId, // id of the confession where we want to add the comment
+                id: parseInt(targetId), // id of the confession where we want to add the comment
                 comment: commentBox.value, // comment text
                 gif: document.getElementById("addGif").value === undefined ? "" : document.getElementById("addGif").value // if has not gif, send an empty string
               }),
