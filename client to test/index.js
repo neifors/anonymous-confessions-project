@@ -2,11 +2,12 @@ document.getElementById("form").addEventListener("submit", event => {
    event.preventDefault()
 
 
-//const newUrl = "https://anonconfess.herokuapp.com/" 
+//const serverUrl = "https://anonconfess.herokuapp.com/" || "http://localhost:3000/confessions/post"
 
 
-   fetch("http://localhost:3000/confessions/post", {mode: no-cors}, {
+   fetch("/post", {
       method : 'POST',
+      mode: 'no-cors',
       body: JSON.stringify({
          title : document.getElementById("title").value,
          message : document.getElementById("message").value,
