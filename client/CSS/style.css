@@ -313,10 +313,35 @@ h3{
     letter-spacing: 3px;
 }
 
+#happycommentIcon{
+    position: relative;
+    z-index: 4;
+    background-color: #999999;
+    float: right;
+    font-size: 70%;
+    display: inline;
+    padding: 2px;
+    margin: 1%;
+    border-radius: 100px;
+    letter-spacing: 3px;
+}
+
+#shockcommentIcon{
+    position: relative;
+    z-index: 4;
+    background-color: #999999;
+    float: right;
+    font-size: 70%;
+    display: inline;
+    padding: 2px;
+    margin: 1%;
+    border-radius: 100px;
+    letter-spacing: 3px;
+}
 
 
-#idofConfession{
-    display: inline
+#idOfConfession{
+    display: none;
 }
 
 img{

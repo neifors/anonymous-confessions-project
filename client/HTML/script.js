@@ -294,10 +294,16 @@ function fetchCon(string = "") {
 
 
 
-document.getElementById("submitConfession").addEventListener("click", event => {
-  event.preventDefault()
+
+let newConfess = document.getElementById("submitConfession");
+
+newConfess.addEventListener("click", submitNewConfess);
 
 
+function submitNewConfess(){
+  console.log(document.getElementById("title").value);
+  console.log(document.getElementById("confession").value);
+  console.log(document.getElementById("category").value);
   fetch("http://localhost:3000/confessions/post", {
     method: 'POST',
     body: JSON.stringify({
@@ -315,4 +321,19 @@ document.getElementById("submitConfession").addEventListener("click", event => {
   })
   removeAll();
   fetchCon();
-})
+
+
+
+
+
+
+
+
+}
+
+  
+
+
+
+
+
