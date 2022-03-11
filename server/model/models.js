@@ -37,8 +37,9 @@ class Confession{
       const confessions = Confession.all;
       const id = confessionsData.length + 1;
       const newConfession = new Confession({id : id, ...data});
-      confessions.unshift(newConfession);
+      confessions.push(newConfession);
       Confession.saveData(confessions)
+      return {result: 'Post was added successfully.', confession:{...newConfession}}
    }
 
    static findConfession(keyword) {
