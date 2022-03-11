@@ -1,4 +1,4 @@
-const confessionsData = require("../data/data.json")
+//const confessionsData = require("../data/data.json")
 const fs = require('fs')
 
 
@@ -15,6 +15,7 @@ class Confession{
 
    static get all() {
       // returns all the posts saved into ./data/data.json
+      const confessionsData = require("../data/data.json")
       const confessions = confessionsData.map(confession => new Confession(confession));
       return confessions;
    }
@@ -37,7 +38,7 @@ class Confession{
       const confessions = Confession.all;
       const id = confessionsData.length + 1;
       const newConfession = new Confession({id : id, ...data});
-      confessions.push(newConfession);
+      confessions.unshift(newConfession);
       Confession.saveData(confessions)
       return {result: 'Post was added successfully.', confession:{...newConfession}}
    }

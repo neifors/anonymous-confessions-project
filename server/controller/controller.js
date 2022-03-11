@@ -7,7 +7,7 @@ const Confession = require('../model/models');
 router.get('/', (req, res) => {
     res.send(Confession.all);
   })
-  
+ 
 
 // /confessions/:id
 router.get('/:id', (req, res) => {
