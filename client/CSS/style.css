@@ -1,0 +1,438 @@
+body{
+    background-color: #999999;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: grid;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Dancing Script';
+    font-size: 500%;
+}
+
+h1:before{
+    content: 'Anon';
+    color: white;
+}
+
+h1:after{
+    content: 'Confessions';
+    color: black;
+}
+
+#input{
+    grid-area: inputConfession;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 10px;
+    margin: 5%;
+    margin-left: 10%;
+    padding:2%;
+    width: 36%;
+    height: 45vh;
+    background-color: #666666;
+    display: grid;
+    grid-template-areas: "title catagory" "confession" "addGif button"; 
+    grid-template-columns: 1fr 1fr;
+
+}
+
+#title{
+
+    height: 23%;
+    width: 20vw;
+    grid-area: title;
+}
+
+#category{
+    margin-left: -13vw;
+    height: 23%;
+    width: 13vw;
+    grid-area: catagory;
+}
+
+#confession{
+    z-index: 2;
+    transform: translateY(-48%);
+    width: 33.8vw;
+    height: 130%;
+    grid-area: confession;
+    grid-row: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    
+}
+
+#addGif{
+    grid-area: add-Gif;
+    width: 33.8vw;
+    height: 20%;
+
+}
+
+#submitConfession{
+    transform: translate3d(-17.5vw, 5vh, 0);
+    z-index: 2;
+    height: 3vh;
+    grid-area: button;
+    display: block;
+    grid-row: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+
+}
+
+#container{
+    display: grid;
+    grid-template-areas: "inputConfession searchBar"; 
+    grid-template-columns: 1fr 1fr;
+    width: 200%;
+
+
+}
+
+#search{
+    height: 10%;
+    width: 37%;
+    grid-area: searchBar;
+    background-color: #666666;
+    margin: 5%;
+    padding:1%;
+    display: grid;
+    grid-template-areas: "search searchCatagory searchConfession"; 
+    grid-template-columns: 2fr 1fr 0.5fr;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    margin-left: 13.5%;
+
+}
+
+#searchBar{
+    grid-area: search;
+
+}
+
+#searchCatagory{
+    grid-area: searchCatagory;
+
+}
+
+#searchConfession{
+    grid-area: searchConfession;
+
+}
+
+
+@media screen and (max-width: 1000px){
+    #search{
+        grid-template-areas: "search searchCatagory searchConfession"; 
+        grid-template-columns: 1fr 0.7fr 0.5fr;
+        transform: translate3d(-170%, 0, 0);
+
+    }
+
+    #searchBar{
+        grid-area: search;
+        width: 95%;
+    
+    }
+
+
+
+}
+
+.screenContainer{
+    position: absolute;
+    height: auto;
+    transform: translate3d(9.25%, 19vh, 0);
+        
+}
+
+
+#confessionPost{
+    transform: translateY(-708px);
+    position: relative;
+    z-index: 3;
+    overflow-y: scroll;
+    width: 75%;
+    height: 36.5vh;
+    border-radius: 10px;
+    grid-area: confessionPost;
+    background-color: #666666;  
+    margin: 3%;
+    margin-bottom: 10%;
+    margin-top: 10.25%;
+    padding: 2%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    
+
+
+}
+
+#COL-6{
+    margin-left: -10%;
+    margin-bottom: -3%;
+}
+
+@media screen and (min-width: 1000px){
+    #search{
+        width: 37%;
+        grid-template-areas: "search searchCatagory searchConfession"; 
+        grid-template-columns: 1fr 0.7fr 0.5fr;
+        transform: translate3d(-171%, 0, 0);
+
+    }
+}
+
+
+@media screen and (max-width: 1000px){
+    #search{
+        width: 36.2%;
+        grid-template-areas: "search searchCatagory searchConfession"; 
+        grid-template-columns: 1fr 0.7fr 0.5fr;
+        transform: translate3d(-175%, 0, 0);
+
+    }
+
+
+    .screenContainer{
+        height: auto;
+        transform: translate3d(9.25%, 23.25vh, 0);
+
+    }
+
+    #confessionPost{
+        transform: translate3d(-0.5vw, -68.75vh, 0);
+
+
+
+    }
+
+    #COL-6{
+        margin-left: -10%;
+        margin-bottom: -4%;
+    }
+
+
+
+
+
+
+}
+
+.postedRow{
+    color:black
+}
+
+h3{
+    font-size: 150%;
+}
+
+#addComment{
+    width: 100%;
+    border-radius: 10px;
+    
+
+}
+
+#commentContainer{
+    margin: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-top:black;
+    border-left: black;
+    border-right: black;
+
+}
+
+#closeButton{
+    position: relative;
+    z-index: 4;
+    transform: translateY(-20px);
+    float: right;
+    font-size: 150%;
+    display: inline;
+    right: 0;
+    padding: 7px;
+    margin: 5px;
+    border-radius: 100px;
+    letter-spacing: 3px;
+}
+
+
+
+#hateIcon{
+    position: relative;
+    z-index: 4;
+    background-color: #999999;
+    font-size: 150%;
+    display: inline;
+    padding: 7px;
+    margin: 5px;
+    border-radius: 100px;
+    letter-spacing: 3px;
+}
+
+#shockIcon{
+    position: relative;
+    z-index: 4;
+    background-color: #999999;
+    font-size: 150%;
+    display: inline;
+    padding: 7px;
+    margin: 5px;
+    border-radius: 100px;
+    letter-spacing: 3px;
+}
+
+#happyIcon{
+    position: relative;
+    z-index: 4;
+    background-color: #999999;
+    font-size: 150%;
+    display: inline;
+    padding: 7px;
+    margin: 5px;
+    border-radius: 100px;
+    letter-spacing: 3px;
+}
+
+#hatecommentIcon{
+    position: relative;
+    z-index: 4;
+    background-color: #999999;
+    float: right;
+    font-size: 70%;
+    display: inline;
+    padding: 2px;
+    margin: 1%;
+    border-radius: 100px;
+    letter-spacing: 3px;
+}
+
+#shockcommentIcon{
+    background-color: #999999;
+    float: right;
+    font-size: 70%;
+    display: inline;
+    padding: 2px;
+    margin: 1%;
+    border-radius: 100px;
+    letter-spacing: 3px;
+}
+
+#happycommentIcon{
+    background-color: #999999;
+    float: right;
+    font-size: 70%;
+    display: inline;
+    padding: 2px;
+    margin: 1%;
+    border-radius: 100px;
+    letter-spacing: 3px;
+}
+
+#idOfConfession{
+    display: none;
+
+}
+
+.classComment{
+    display: inline;
+}
+
+img{
+    margin:10px;
+    width: 50%;
+}
+
+.col-6{
+    position: relative;
+    z-index: 0;
+}
+
+
+@media screen and (max-width: 750px){
+    #search{
+        transform: translate3d(-132.5%, 0, 0);
+        width:75%;
+        
+
+    }
+
+    #input{
+        transform: translate3d(9%,17%,0);
+        width: 72.5vw;
+        padding: 2%;
+    
+        
+    }
+
+    #title{
+        width: 32.5vw;
+
+
+    }
+
+    #category{
+        width: 35vw;
+        transform: translateX(-22vw);
+
+    }
+
+    #confession{
+        width: 67.7vw;
+    }
+
+    #addGif{
+        transform: translateX(-34vw);
+        width: 45vw;
+
+    }
+
+    #submitConfession{
+        width: 20vw;
+        transform: translate3d(-55%, -1%, 0);
+        height: 4.5vh;
+    }
+
+   
+
+
+
+
+
+
+    #postedRow{
+        display: flex;
+        flex-direction: column;
+        transform: translate3d(41vw, 10vw, 0);
+
+    }
+
+    #confessionPost{
+        transform: translate3d(-49%, -50%, 0);
+        
+        width: 150%;
+        height: 37vh;
+        margin-top: 5%;
+
+
+    }
+
+    #COL-6{
+        margin-left: -10%;
+        margin-bottom: -4%;
+        position: relative;
+        z-index: 1;
+    }
+
+
+
+
+
+
+}
