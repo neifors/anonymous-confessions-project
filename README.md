@@ -63,3 +63,5 @@ We were asked to create a website where users should be able to post journal ent
 ## HOW IS FINALLY LOOKING
 
  ---need to upload the images--- having some problems to push
+
+ As soon I can upload the images I'll link them here
