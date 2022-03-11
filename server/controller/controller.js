@@ -1,16 +1,7 @@
 const express = require('express')
 const router = express.Router()
-let bodyParser = require('body-parser');
-
-// support parsing of application/json type post data
-router.use(bodyParser.json());
-//suggested to use this instead of one above: router.use(express.json());
-
-//support parsing of application/x-www-form-urlencoded post data
-router.use(bodyParser.urlencoded({ extended: true }));
 
 const Confession = require('../model/models');
-const app = require('../server');
 
 // /confessions/
 router.get('/', (req, res) => {
@@ -35,10 +26,23 @@ router.get('/search/:keyword', (req, res) => {
     res.send(Confession.findConfession(req.params.keyword))
 })
 
+
+// router.get('/post', (req, res) => {
+//     res.send('sos')
+// })
+
+// router.route('/post').get( (req, res) => {
+//     res.send('sos')
+// }).post( (req, res) => {
+//     //console.log(req)
+//     //console.log(req.body)
+//     res.send(Confession.addConfession(req.body))
+// })
+
+
 // /confessions/post
+
 router.post('/post', (req, res) => {
-    //console.log(req)
-    //console.log(req.body)
     res.send(Confession.addConfession(req.body))
 })
 
@@ -49,12 +53,27 @@ router.post('/reaction', (req, res) => {
 
 // confessions/postComment
 router.post('/postComment', (req, res) => {
-    Confession.createComment(req.body)
+    try{
+        Confession.createComment(req.body)
+        res.sendStatus(201)
+    } catch(err) {
+        res.status(404).send(err.message);
+    }
 })
 
 // /confessions/delete
-router.post('/delete', (req, res) => {
-    Confession.removeConfession(req.body.id)
+router.delete('/delete', (req, res) => {
+    try{
+        const confess = Confession.getConfessionById(req.body.id)
+        if(confess) {
+            Confession.removeConfession(req.body.id)
+            res.sendStatus(204)
+        }
+        else
+          throw new Error(`${req.body.id} does not exist`)
+      } catch(err) {
+        res.status(404).send(err.message);
+      }
 })
 
 module.exports = router;
