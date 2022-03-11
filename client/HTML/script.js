@@ -1,5 +1,5 @@
-let confessionContainer = document.querySelector("#postedRow");
-confessionContainer.classList.add('.row');
+
+let confessionContainer = document.querySelector('.postedRow');
 let AllCats = document.querySelectorAll('h5');
 let Alltitles = document.querySelectorAll('h3');
 let selectCategory = document.querySelector('#searchCategory');
@@ -8,7 +8,12 @@ let searchTerm = document.querySelector('#searchBar');
 let category = document.querySelector('h5')
 let Col = document.querySelector('COL-6');
 let allID = document.querySelectorAll('h6');
-let allCommentBoxes = document.querySelectorAll('#addComment');
+
+
+
+
+fetchCon();
+button.addEventListener('click', searchByCategoryOrTitle);
 
 
 
@@ -34,16 +39,7 @@ function searchByCategoryOrTitle() {
 }
 
 
-fetchCon();
 
-
-
-
-
-
-
-
-button.addEventListener('click', searchByCategoryOrTitle);
 
 function removeAll() {
   for (let i = 0; i < AllCats.length; i++) {
@@ -55,7 +51,6 @@ function removeAll() {
 
 
 function fetchCon(string = "") {
-  let giftoAdd;
   button.disabled = true;
   fetch('http://localhost:3000/confessions' + string).then(function (response) {
     response.json().then(function (json) {
@@ -89,6 +84,7 @@ function fetchCon(string = "") {
         comment.classList.add('classComment');
         confessId.id = 'idOfConfession';
         newConfession.classList.add('col-6');
+        newConfession.classList.add('col-xs-12');
         newConfession.id = 'COL-6';
         ConfessionPost.id = 'confessionPost';
         let happy = document.createTextNode(json[item].reactions.love);
@@ -123,13 +119,14 @@ function fetchCon(string = "") {
         ConfessionPost.appendChild(mainContent);
         ConfessionPost.append(giftoAdd);
         ConfessionPost.appendChild(comment);
-        ConfessionPost.appendChild(comment);
         newConfession.append(ConfessionPost);
         confessionContainer.append(newConfession);
         AllCats = document.querySelectorAll('h5');
         Alltitles = document.querySelectorAll('h3');
         allID = document.querySelectorAll('h6');
         for (comment of json[item].comments) {
+
+
           let happyIconComment = document.createElement('i');
           let shockIconComment = document.createElement('i');
           let angryIconComment = document.createElement('i');
@@ -148,6 +145,8 @@ function fetchCon(string = "") {
           happyIconComment.appendChild(happyCom);
           shockIconComment.appendChild(shockCom);
           angryIconComment.appendChild(angryCom);
+
+
           let commentPost = document.createElement('p');
           let textComment = document.createTextNode(comment.message);
           let commentId = document.createElement('h6');
@@ -169,32 +168,6 @@ function fetchCon(string = "") {
 
       }
     }).then(() => button.disabled = false).then(() => {
-      allCommentBoxes = document.querySelectorAll('#addComment').forEach(commentBox => {
-        commentBox.addEventListener('keypress', commentPost);
-        function commentPost(event) {
-          if (event.key === 'Enter') {
-            let targetId = commentBox.parentElement.firstElementChild.textContent;
-            fetch("http://localhost:3000/confessions/postComment", {
-              method: 'POST',
-              body: JSON.stringify({
-                id: targetId, // id of the confession where we want to add the comment
-                comment: commentBox.value, // comment text
-                gif: document.getElementById("addGif").value === undefined ? "" : document.getElementById("addGif").value // if has not gif, send an empty string
-              }),
-              headers: {
-                "Content-Type": "application/json; charset=UTF-8"
-              }
-            })
-
-
-
-          }
-
-        }
-      })
-
-
-    }).then(() => {
       allHappyReactonconfess = document.querySelectorAll('#happyIcon').forEach(happyReaction => {
         happyReaction.addEventListener('click', addALike);
         function addALike() {
@@ -280,6 +253,38 @@ function fetchCon(string = "") {
          }
   
       })
+      
+  
+    }).then(() => {
+      allCommentBoxes = document.querySelectorAll('.classComment').forEach(commentBox => {
+        commentBox.addEventListener('keyup', commentPost);
+        function commentPost(event) {
+          
+          if (event.key === 'Enter') {
+            let targetId = commentBox.parentElement.firstElementChild.textContent;
+            alert(targetId);
+            alert(commentBox.value);
+            if(commentBox.value !== ''){
+            fetch("http://localhost:3000/confessions/postComment", {
+              method: 'POST',
+              body: JSON.stringify({
+                id: parseInt(targetId), // id of the confession where we want to add the comment
+                comment: commentBox.value, // comment text
+                gif: document.getElementById("addGif").value === undefined ? "" : document.getElementById("addGif").value // if has not gif, send an empty string
+              }),
+              headers: {
+                "Content-Type": "application/json; charset=UTF-8"
+              }
+            })
+          }
+
+
+
+          }
+
+        }
+      })
+
 
     })
 
@@ -290,10 +295,15 @@ function fetchCon(string = "") {
 
 
 
-document.getElementById("submitConfession").addEventListener("click", event => {
-  event.preventDefault()
+let newConfess = document.getElementById("submitConfession");
+
+newConfess.addEventListener("click", submitNewConfess);
 
 
+function submitNewConfess(){
+  console.log(document.getElementById("title").value);
+  console.log(document.getElementById("confession").value);
+  console.log(document.getElementById("category").value);
   fetch("http://localhost:3000/confessions/post", {
     method: 'POST',
     body: JSON.stringify({
@@ -311,4 +321,19 @@ document.getElementById("submitConfession").addEventListener("click", event => {
   })
   removeAll();
   fetchCon();
-})
+
+
+
+
+
+
+
+
+}
+
+  
+
+
+
+
+
